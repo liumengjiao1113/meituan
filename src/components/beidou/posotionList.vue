@@ -1,6 +1,6 @@
 <template>
   <div class="poslist">
-    <RouterLink to="/beidou/xiangqing">
+    <RouterLink to="/xiangqing">
       <div class="content">
         <div class="listitem">
           <div class="job">

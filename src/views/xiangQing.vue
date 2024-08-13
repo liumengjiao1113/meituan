@@ -1,8 +1,7 @@
 <template>
-  <div class="child-content">
+  <div>
     <mainHeader></mainHeader>
-
-    <h2>Child Component</h2>
+    <h2>aa</h2>
   </div>
 </template>
 
@@ -10,9 +9,4 @@
 export default {}
 </script>
 
-<style>
-.child-content {
-  height: 100%;
-  width: 100%;
-}
-</style>
+<style></style>

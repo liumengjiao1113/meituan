@@ -15,16 +15,17 @@ const router = createRouter({
     },
     {
       path: '/beidou',
-      component: BeiDou,
-      children: [
-        {
-          path: 'xiangqing',
-          component: XiangQing
-        }
-      ]
+      component: BeiDou
+    },
+    {
+      path: '/xiangqing',
+      component: XiangQing
     },
 
-    { path: '/social', component: SocialView },
+    {
+      path: '/social',
+      component: SocialView
+    },
     { path: '/school', component: SchoolView },
     { path: '/login', component: DengLu },
     { path: '/', component: Home }
