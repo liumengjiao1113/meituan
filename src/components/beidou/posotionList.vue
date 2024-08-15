@@ -1,48 +1,67 @@
 <template>
-  <div class="poslist">
-    <RouterLink to="/xiangqing">
-      <div class="content">
-        <div class="listitem">
-          <div class="job">
-            <div class="jodtitle">
-              <div class="jobname">【北斗】大模型机器学习引擎工程师</div>
-            </div>
-            <div class="linebox">
-              <div class="boxitem">
-                <i class=""
-                  ><el-icon><Reading /></el-icon
-                ></i>
-                <span>应届</span>
+  <div class="planjob">
+    <div v-for="job in activejobs" :key="job.jobname" class="poslist">
+      <RouterLink to="/xiangqing">
+        <div class="content">
+          <div class="listitem">
+            <div class="job">
+              <div class="jobtitle">
+                <div class="jobname">{{ job.jobname }}</div>
               </div>
-              <div class="boxitem">
-                <i
-                  ><el-icon><Location /></el-icon
-                ></i>
-                <span>北京市、上海市</span>
+              <div class="linebox">
+                <div class="boxitem">
+                  <i class=""
+                    ><el-icon><Reading /></el-icon
+                  ></i>
+                  <span>应届</span>
+                </div>
+                <div class="boxitem">
+                  <i
+                    ><el-icon><Location /></el-icon
+                  ></i>
+                  <span>{{ job.location }}</span>
+                </div>
+                <div class="boxitem">
+                  <i
+                    ><el-icon><Clock /></el-icon
+                  ></i>
+                  <span> 更新于2024/07/25</span>
+                </div>
               </div>
-              <div class="boxitem">
-                <i
-                  ><el-icon><Clock /></el-icon
-                ></i>
-                <span> 更新于2024/07/25</span>
-              </div>
-            </div>
-            <div class="posduty">
-              <div class="dutyname">岗位职责</div>
-              <div class="desc hidden-ellipsis">工作城市可选北京、上海</div>
-              <div class="desc hidden-ellipsis">
-                1.
-                基座大模型预训练，包括但不限于不同规模、不同结构的语言模型和多模态模型的数据准备和优化、模型预训练、训练加速与框架优化等；
+              <div class="posduty">
+                <div class="dutyname">岗位职责</div>
+                <div class="desc hidden-ellipsis">{{ job.duty }}</div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </RouterLink>
+      </RouterLink>
+    </div>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  props: {
+    activeCity: { type: Array, default: () => [] },
+
+    jobs: { type: Array, default: () => [] }
+  },
+  computed: {
+    activejobs() {
+      console.log('Active City:', this.activeCity) // 添加调试信息
+      console.log('Jobs:', this.jobs) // 添加调试信息
+      if (!Array.isArray(this.activeCity)) {
+        return this.jobs
+      }
+      if (this.activeCity.length === 0) {
+        return this.jobs
+      }
+      return this.jobs.filter((job) => this.activeCity.some((city) => job.location.includes(city)))
+    }
+  }
+}
+</script>
 
 <style scoped>
 .poslist {

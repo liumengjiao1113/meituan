@@ -70,7 +70,7 @@
 import { RouterLink } from 'vue-router'
 </script>
 
-<style>
+<style scoped>
 a {
   text-decoration-line: none;
 }
@@ -89,7 +89,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1280px;
+
   height: 78px;
   overflow: hidden;
   background: #fe6201;

@@ -1,10 +1,15 @@
+import { createRouter, createWebHistory } from 'vue-router'
 import XiangQing from '@/views/xiangQing.vue'
 import BeiDou from '@/views/BeiDou.vue'
-import { createRouter, createWebHistory } from 'vue-router'
+
 import Home from '@/views/Home.vue'
 import SocialView from '@/views/SocialView.vue'
 import SchoolView from '@/views/SchoolView.vue'
 import DengLu from '@/views/DengLu.vue'
+import RenCai from '@/views/renCai.vue'
+import RenWen from '@/views/renWen.vue'
+import WenHua from '@/views/wenHua.vue'
+import YuanGong from '@/views/yuanGong.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,8 +33,11 @@ const router = createRouter({
     },
     { path: '/school', component: SchoolView },
     { path: '/login', component: DengLu },
-    { path: '/', component: Home }
-    // { path: '/talent-growth', component: /* 人才成长跳转页面组件 */ },
+    { path: '/', component: Home },
+    { path: '/rencai', component: RenCai },
+    { path: '/renwen', component: RenWen },
+    { path: '/rencai', component: WenHua },
+    { path: '/yuangong', component: YuanGong }
   ]
 })
 

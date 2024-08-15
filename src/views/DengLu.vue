@@ -37,7 +37,8 @@
           <div class="codewarp">
             <div class="vrcode">
               <span class="mtdinput">
-                <input type="text" placeholder="验证码" />
+                <input type="" placeholder="验证码" class="text" />
+                <div class="suffix"></div>
               </span>
             </div>
             <button class="vrbutton">
@@ -49,7 +50,23 @@
           </button>
         </div>
         <div class="line"></div>
+        <div class="loginwechat">
+          <div class="qrcon">
+            <div class="select">
+              <div class="tips">
+                <p class="tiptitle">扫码登录</p>
+                <p class="tiptext">请先勾选</p>
+                <p class="tiptext">个人信息保护隐私政策</p>
+              </div>
+            </div>
+            <div class="welogion">
+              <span>使用微信扫一扫登录</span><br />
+              <span>“美团招聘”</span>
+            </div>
+          </div>
+        </div>
       </div>
+
       <div class="agreewarp">
         <div class="agreetext">
           <label for="" class="mtdcheck">
@@ -104,7 +121,8 @@ export default {
   overflow: hidden;
   background-color: #fff;
 }
-
+/* logiontitle */
+/* #region */
 .logintitle {
   display: flex;
   -webkit-box-pack: justify;
@@ -136,6 +154,11 @@ img {
   letter-spacing: 0;
   cursor: pointer;
 }
+
+/* #endregion */
+
+/* logiontype  */
+/* #region */
 .logintype {
   display: flex;
 }
@@ -190,6 +213,22 @@ img {
   position: relative;
   width: 100%;
 }
+
+.mtdinput .text:focus {
+  border: none;
+}
+
+.suffix {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  right: 8px;
+  position: absolute;
+  transform: translateY(-50%);
+  color: rgba(0, 0, 0, 0.36);
+  font-size: 14px;
+}
+
 .el-checkbox__input.is-checked .el-checkbox__inner {
   background-color: #ffd100;
   border-color: #ffd100;
@@ -258,6 +297,8 @@ img {
   );
 }
 
+/* #endregion */
+
 .agreewarp {
   display: flex;
   align-items: center;
@@ -306,5 +347,71 @@ img {
   color: #166ff7;
   letter-spacing: 0;
   line-height: 22px;
+}
+
+.loginwechat {
+  padding-top: 58px;
+  padding-left: 32px;
+  width: 332px;
+  height: 300px;
+}
+
+.qrcon {
+  position: relative;
+}
+
+.select {
+  position: absolute;
+  left: 60px;
+  right: 60px;
+  top: 0;
+  width: 180px;
+  height: 180px;
+  z-index: 30;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.tips {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.tiptitle {
+  margin-top: 70px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.tiptext {
+  font-weight: 400;
+  font-size: 12px;
+  color: #fff;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 22px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  word-break: break-all;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.welogion {
+  position: absolute;
+  margin-top: 200px;
+  right: 60px;
+  left: 60px;
+  width: 180px;
+  text-align: center;
 }
 </style>

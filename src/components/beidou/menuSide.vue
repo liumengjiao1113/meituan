@@ -13,7 +13,7 @@
                 class="chengshi"
                 v-for="(city, cityIndex) in cityRow"
                 :key="cityIndex"
-                :class="{ active: activeCity === city }"
+                :class="{ active: activeCity.includes(city) }"
                 @click="xuanze(city)"
               >
                 {{ city }}
@@ -91,7 +91,7 @@
 export default {
   data() {
     return {
-      activeCity: '',
+      activeCity: [],
       cities: [
         ['北京', '上海'],
         ['深圳', '成都'],
@@ -105,17 +105,19 @@ export default {
   },
   methods: {
     xuanze(city) {
-      if (this.activeCity === city) {
-        this.activeCity = ''
+      const index = this.activeCity.indexOf(city)
+      if (index > -1) {
+        this.activeCity.splice(index, 1)
       } else {
-        this.activeCity = city
+        this.activeCity.push(city)
       }
+      this.$emit('update:activeCity', [...this.activeCity])
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 .el-menu-vertical-demo {
   width: 400px;
 }

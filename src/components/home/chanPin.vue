@@ -3,83 +3,7 @@
     <div class="sercontent">
       <div class="sertitle">产品和服务</div>
       <div class="serlist">
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
-          <img src="../../assets/image2.png" alt="" />
-          <span>美团</span>
-        </div>
-        <div class="listiem">
+        <div class="listiem" v-for="item in 20" :key="item">
           <img src="../../assets/image2.png" alt="" />
           <span>美团</span>
         </div>
@@ -123,7 +47,7 @@ export default {}
 .listiem {
   width: 240px;
   height: 100px;
-  margin-right: 20px;
+  margin-right: 15px;
   margin-bottom: 20px;
   background: #fff;
   display: flex;

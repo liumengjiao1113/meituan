@@ -3,6 +3,7 @@
     <div class="teamcontent">
       <div class="teamname">
         <h5 class="text">美团简介</h5>
+        <div class="textbg">MEITUAN</div>
       </div>
       <div class="teamimg">
         <div class="imglist"></div>
@@ -16,7 +17,7 @@
 export default {}
 </script>
 
-<style>
+<style scoped>
 .teamwrap {
   background-color: #fff;
   padding: 80px 0 68px;
@@ -64,5 +65,16 @@ export default {}
   border-radius: 16px;
   background-size: cover;
   background-image: url(../../assets/meituan2.png);
+}
+
+.textbg {
+  opacity: 0.5;
+  font-family: MEITUANTYPE-BOLD;
+  font-size: 190px;
+  line-height: 200px;
+  margin-top: -35px;
+  background: linear-gradient(to bottom, #eff0f1, #f7f8f9);
+  background-clip: text;
+  color: transparent;
 }
 </style>
