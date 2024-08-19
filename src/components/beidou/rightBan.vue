@@ -1,6 +1,6 @@
 <template>
-  <div class="postitle">全部北斗计划职位（49）</div>
-  <posotionList :activeCity="activeCity" :jobs="jobs"> </posotionList>
+  <div class="postitle">{{ title }}({{ jobcount }})</div>
+  <posotionList :activeCity="activeCity" :jobs="jobs" @updatecount="handleJob"> </posotionList>
 </template>
 
 <script>
@@ -10,62 +10,18 @@ export default {
     posotionList
   },
   props: {
-    activeCity: Array
+    activeCity: Array,
+    jobs: Array,
+    title: String
   },
   data() {
     return {
-      jobs: [
-        {
-          jobname: '【北斗】大模型机器学习引擎工程师',
-          location: '北京市、上海市',
-          duty: '面向GPU和高性能网络设计分布式训练架构'
-        },
-        {
-          jobname: '【北斗】大模型推理引擎工程师',
-          location: '北京市、深圳市',
-          duty: '负责LLM大语言模型的推理优化'
-        },
-        {
-          jobname: '【北斗】大模型推理引擎工程师',
-          location: '深圳市',
-          duty: '负责LLM大语言模型的推理优化'
-        },
-        {
-          jobname: '【北斗】大模型推理引擎工程师',
-          location: '北京市',
-          duty: '负责LLM大语言模型的推理优化'
-        },
-        {
-          jobname: '【北斗】自动驾驶仿真算法工程师',
-          location: '上海市',
-          duty: '负责LLM大语言模型的推理优化'
-        },
-        {
-          jobname: '【北斗】大模型推理引擎工程师',
-          location: '北京市、武汉市',
-          duty: '负责LLM大语言模型的推理优化'
-        },
-        {
-          jobname: '【北斗】大模型推理引擎工程师',
-          location: '武汉市',
-          duty: '负责LLM大语言模型的推理优化'
-        },
-        {
-          jobname: '【北斗】大模型推理引擎工程师',
-          location: '北京市',
-          duty: '负责LLM大语言模型的推理优化'
-        },
-        {
-          jobname: '【北斗】大模型推理引擎工程师',
-          location: '北京市',
-          duty: '负责LLM大语言模型的推理优化'
-        },
-        {
-          jobname: '【北斗】大模型推理引擎工程师',
-          location: '厦门',
-          duty: '负责LLM大语言模型的推理优化'
-        }
-      ]
+      jobcount: 10
+    }
+  },
+  methods: {
+    handleJob(count) {
+      this.jobcount = count
     }
   }
 }

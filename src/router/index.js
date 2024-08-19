@@ -31,13 +31,34 @@ const router = createRouter({
       path: '/social',
       component: SocialView
     },
-    { path: '/school', component: SchoolView },
-    { path: '/login', component: DengLu },
-    { path: '/', component: Home },
-    { path: '/rencai', component: RenCai },
-    { path: '/renwen', component: RenWen },
-    { path: '/rencai', component: WenHua },
-    { path: '/yuangong', component: YuanGong }
+    {
+      path: '/school',
+      component: SchoolView
+    },
+    {
+      path: '/login',
+      component: DengLu
+    },
+    {
+      path: '/',
+      component: Home
+    },
+    {
+      path: '/rencai',
+      component: RenCai
+    },
+    {
+      path: '/renwen',
+      component: RenWen
+    },
+    {
+      path: '/wenhua',
+      component: WenHua
+    },
+    {
+      path: '/yuangong',
+      component: YuanGong
+    }
   ]
 })
 

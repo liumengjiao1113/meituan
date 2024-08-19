@@ -79,7 +79,7 @@
             <h3>部门</h3>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="1-1">item one</el-menu-item>
+            <el-menu-item index="1-1"></el-menu-item>
           </el-menu-item-group>
         </el-sub-menu>
       </el-menu>
@@ -89,6 +89,7 @@
 
 <script>
 export default {
+  props: {},
   data() {
     return {
       activeCity: [],

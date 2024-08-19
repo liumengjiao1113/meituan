@@ -49,8 +49,6 @@ export default {
   },
   computed: {
     activejobs() {
-      console.log('Active City:', this.activeCity) // 添加调试信息
-      console.log('Jobs:', this.jobs) // 添加调试信息
       if (!Array.isArray(this.activeCity)) {
         return this.jobs
       }
@@ -58,6 +56,14 @@ export default {
         return this.jobs
       }
       return this.jobs.filter((job) => this.activeCity.some((city) => job.location.includes(city)))
+    },
+    jobcount() {
+      return this.activejobs.length
+    }
+  },
+  watch: {
+    activejobs() {
+      this.$emit('updatecount', this.jobcount)
     }
   }
 }
